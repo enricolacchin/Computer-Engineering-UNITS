@@ -1,4 +1,4 @@
-# Exercise 2 - Slide 227
+# Lab 2
 
 1. Design and implement a class that represents $X = \mathcal{M}(\mathbb{R})$
   - with a proper `equals()`

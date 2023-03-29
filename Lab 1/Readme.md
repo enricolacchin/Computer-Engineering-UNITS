@@ -1,4 +1,4 @@
-# Exercise 1 - Slide 151
+# Lab 1
 
 ## Goal
 
