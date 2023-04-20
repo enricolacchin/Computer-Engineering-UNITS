@@ -57,3 +57,16 @@ Note:
 - column width is the shortest possible (2 at 1st `p`, 3 at 2nd `p`)
 
 Hint: use `printf` or `String.format()`, e.g., `%3d`
+
+# Lab 3 bis
+
+## GZIP file array
+
+1. Design and implement a class `GZIPFileArray` that **extends** `FileArray` and mantains a **compressed** binary file-backed array of `int` values
+- with same functionalities of `FileArray` (see [specifications](../Lab%203/Readme.md))
+2. Write an application that "uses" `FileArray` or `GZIPFileArray`
+- receives $m \ge 1$ parameters at command line
+- 1st is a file pathname
+  - if not existing, create with $n \sim U(\\{1,\dots,2^5\\})$, otherwise, load
+  - if filename ends with `.zip`, use `GZIPFileArray`, otherwise use `FileArray`
+- from 2nd on, a list of one-char commands (see [specifications](../Lab%203/Readme.md))
