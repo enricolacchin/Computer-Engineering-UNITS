@@ -1,4 +1,4 @@
-# ENG - Final Project Database Course 2023
+# :gb: Final Project Database Course 2023
 
 This is the repository of my final project for the course "079IN - Databases" a.y. 2022/2023 attended at the University of Trieste.
 
@@ -19,7 +19,7 @@ In the [img](./docs/img/) folder you can find all the images used in the documen
 * For privacy reasons, all data has been censored and fictitious and not real and/or symbolic data inserted
 * The diagrams (Entity - Relationship and Logical) and the database have been created entirely in :gb: English for easier project management
 
-# IT - Progetto Finale Basi di Dati Corso 2023
+# :it: Progetto Finale Basi di Dati Corso 2023
 
 Questa è la repository del mio progetto finale per il corso "079IN - Basi di Dati" a.a. 2022/2023 frequentato all'Università degli Studi di Trieste.
 
