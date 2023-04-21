@@ -28,13 +28,28 @@ public class FileArray {
   public void print() {
     int start = 0;
     int end = ALIGNMENT - 1;
+    int maxNumber = 0;
+    int maxNumberOfDigits = 0;
+    for (int k : array) {
+      if (k > maxNumber) {
+        maxNumber = k;
+      }
+    }
+    if (maxNumber < 10) {
+      maxNumberOfDigits = 1;
+    } else if (maxNumber < 100) {
+      maxNumberOfDigits = 2;
+    } else if (maxNumber < 1000) {
+      maxNumberOfDigits = 3;
+    }
+
     while (start < array.length) {
-      if(end > array.length){
+      if (end > array.length) {
         end = array.length;
       }
       System.out.printf("[%02d-%02d] ", start, end);
       for (int j = start; j <= end && j < array.length; j++) {
-        System.out.printf("%" + ALIGNMENT + "d", array[j]);
+        System.out.printf("%" + maxNumberOfDigits + "d", array[j]);
       }
       System.out.println();
       start = end + 1;
