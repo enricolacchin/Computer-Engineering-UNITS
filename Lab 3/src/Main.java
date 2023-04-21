@@ -1,7 +1,7 @@
 import java.io.File;
 import java.util.Random;
 
-public class GZIPFileArrayTester {
+public class Main {
   public static void main(String[] args) {
 
     // Arguments check
@@ -10,9 +10,11 @@ public class GZIPFileArrayTester {
       System.exit(1);
     }
 
+    // Set argument as path
     String filePathName = args[0];
     FileArray fileArray;
 
+    // Checks if ends with .zip and exists
     if (filePathName.endsWith(".zip") && new File(filePathName).exists()){
       fileArray = new GZIPFileArray(filePathName);
     }
@@ -24,6 +26,7 @@ public class GZIPFileArrayTester {
       fileArray = new FileArray(filePathName, n);
     }
 
+    // Do print and/or increment
     for (int i = 1; i < args.length; i++)
       switch (args[i]) {
         case "i" -> fileArray.incrementAll();
