@@ -76,11 +76,11 @@ public class FileArray {
     }
   }
 
-  protected FileInputStream createInputStream() throws FileNotFoundException {
+  protected InputStream createInputStream() throws IOException {
     return new FileInputStream(filePathName);
   }
 
-  protected FileOutputStream createOutputStream() throws FileNotFoundException {
+  protected OutputStream createOutputStream() throws IOException {
     return new FileOutputStream(filePathName);
   }
 }

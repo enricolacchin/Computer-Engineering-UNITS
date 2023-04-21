@@ -1,4 +1,6 @@
 import java.io.*;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.GZIPOutputStream;
 
 public class GZIPFileArray extends FileArray {
   public GZIPFileArray(String filePathName) {
@@ -10,13 +12,13 @@ public class GZIPFileArray extends FileArray {
   }
 
   @Override
-  protected FileInputStream createInputStream() throws FileNotFoundException {
-    return new FileInputStream(filePathName);
+  protected InputStream createInputStream() throws IOException {
+    return new GZIPInputStream(new FileInputStream(filePathName));
   }
 
   @Override
-  protected FileOutputStream createOutputStream() throws FileNotFoundException {
-    return new FileOutputStream(filePathName);
+  protected OutputStream createOutputStream() throws IOException {
+    return new GZIPOutputStream(new FileOutputStream(filePathName));
   }
 }
 
