@@ -5,7 +5,7 @@ public class FileArray {
   public final int[] array;
   public final String filePathName;
   private static final int MAX_VALUE = 1024;
-  private static final int ALIGNMENT = 5;
+  private static final int N_OF_VALUES_FOR_ROW = 5;
 
   // Loads an existing file
   public FileArray(String filePathName) {
@@ -27,7 +27,7 @@ public class FileArray {
   // Print with at most 5 elements per row
   public void print() {
     int start = 0;
-    int end = ALIGNMENT - 1;
+    int end = N_OF_VALUES_FOR_ROW - 1;
     int maxNumber = 0;
     int maxNumberOfDigits = 0;
     for (int k : read()) {
@@ -53,7 +53,7 @@ public class FileArray {
       }
       System.out.println();
       start = end + 1;
-      end = start + ALIGNMENT - 1;
+      end = start + N_OF_VALUES_FOR_ROW - 1;
     }
   }
 
