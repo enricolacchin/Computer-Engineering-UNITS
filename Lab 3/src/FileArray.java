@@ -30,7 +30,7 @@ public class FileArray {
     int end = ALIGNMENT - 1;
     int maxNumber = 0;
     int maxNumberOfDigits = 0;
-    for (int k : array) {
+    for (int k : read()) {
       if (k > maxNumber) {
         maxNumber = k;
       }
@@ -43,13 +43,13 @@ public class FileArray {
       maxNumberOfDigits = 3;
     }
 
-    while (start < array.length) {
-      if (end > array.length) {
-        end = array.length;
+    while (start < read().length) {
+      if (end > read().length) {
+        end = read().length;
       }
       System.out.printf("[%02d-%02d] ", start, end);
-      for (int j = start; j <= end && j < array.length; j++) {
-        System.out.printf("%" + maxNumberOfDigits + "d", array[j]);
+      for (int j = start; j <= end && j < read().length; j++) {
+        System.out.printf("%" + maxNumberOfDigits + "d", read()[j]);
       }
       System.out.println();
       start = end + 1;
@@ -59,8 +59,8 @@ public class FileArray {
 
   // Increment all elements
   public void incrementAll() {
-    for (int i = 0; i < array.length; i++) {
-      array[i]++;
+    for (int i = 0; i < read().length; i++) {
+      read()[i]++;
     }
     write();
   }
