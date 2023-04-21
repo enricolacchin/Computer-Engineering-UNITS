@@ -2,8 +2,8 @@ import java.io.*;
 import java.util.*;
 
 public class FileArray {
-  private final int[] array;
-  private final String filePathName;
+  public final int[] array;
+  public final String filePathName;
   private static final int MAX_VALUE = 1024;
   private static final int ALIGNMENT = 5;
 
@@ -29,6 +29,9 @@ public class FileArray {
     int start = 0;
     int end = ALIGNMENT - 1;
     while (start < array.length) {
+      if(end > array.length){
+        end = array.length;
+      }
       System.out.printf("[%02d-%02d] ", start, end);
       for (int j = start; j <= end && j < array.length; j++) {
         System.out.printf("%" + ALIGNMENT + "d", array[j]);
@@ -49,7 +52,7 @@ public class FileArray {
 
   // Read file to array
   private int[] read() {
-    try (DataInputStream input = new DataInputStream(new FileInputStream(filePathName))) {
+    try (DataInputStream input = new DataInputStream(createInputStream())) {
       int n = input.readInt();
       int[] array = new int[n];
       for (int i = 0; i < n; i++) {
@@ -63,7 +66,7 @@ public class FileArray {
 
   // Write array to file
   private void write() {
-    try (DataOutputStream output = new DataOutputStream(new FileOutputStream(filePathName))) {
+    try (DataOutputStream output = new DataOutputStream(createOutputStream())) {
       output.writeInt(array.length);
       for (int value : array) {
         output.writeInt(value);
@@ -71,5 +74,13 @@ public class FileArray {
     } catch (IOException e) {
       // ignore for now
     }
+  }
+
+  protected FileInputStream createInputStream() throws FileNotFoundException {
+    return new FileInputStream(filePathName);
+  }
+
+  protected FileOutputStream createOutputStream() throws FileNotFoundException {
+    return new FileOutputStream(filePathName);
   }
 }

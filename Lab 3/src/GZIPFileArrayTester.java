@@ -1,7 +1,7 @@
 import java.io.File;
 import java.util.Random;
 
-public class Main {
+public class GZIPFileArrayTester {
   public static void main(String[] args) {
 
     // Arguments check
@@ -13,10 +13,13 @@ public class Main {
     String filePathName = args[0];
     FileArray fileArray;
 
-    if (new File(filePathName).exists()) {
+    if (filePathName.endsWith(".zip") && new File(filePathName).exists()){
+      fileArray = new GZIPFileArray(filePathName);
+    }
+    else if (new File(filePathName).exists()){
       fileArray = new FileArray(filePathName);
     }
-    else {
+    else{
       int n = new Random().nextInt(32) + 1; // from 1 to 32
       fileArray = new FileArray(filePathName, n);
     }
