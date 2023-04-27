@@ -1,11 +1,11 @@
 import java.io.*;
 
-public class WordCounterServer extends SimpleLineProcessingServer {
+public class SimpleWordCounterServer extends SimpleLineProcessingServer {
 
   private static final int PORT = 10000;
   private static final String QUIT_COMMAND = "bye";
 
-  public WordCounterServer(int port, String quitCommand, OutputStream os) {
+  public SimpleWordCounterServer(int port, String quitCommand, OutputStream os) {
     super(port, quitCommand, os);
   }
 
@@ -21,7 +21,7 @@ public class WordCounterServer extends SimpleLineProcessingServer {
   }
 
   public static void main(String[] args) throws IOException {
-    WordCounterServer server = new WordCounterServer(PORT, QUIT_COMMAND, System.out);
+    SimpleWordCounterServer server = new SimpleWordCounterServer(PORT, QUIT_COMMAND, System.out);
     server.run();
   }
 }
