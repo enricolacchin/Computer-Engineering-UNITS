@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Main {
+public class Anagrams {
   public static void main(String[] args) {
     // Obtain word and number of anagrams that are needed
     Scanner sc = new Scanner(System.in);
