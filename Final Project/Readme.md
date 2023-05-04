@@ -16,8 +16,8 @@ or more named variables $V_e \in V$.
 
 **Example**: with $e=\frac{x+1}{y-2^x}$, $V_e=\{x,y\}$.
 
-Let $a: V \to \mathbb{R}^+$ be a *variable-values function* that associates a list of numerical values $a(v) \in
-\mathbb{R}^+$ with a variable $v$.
+Let $a: V \to \mathbb{R}^+$ be a *variable-values function* that associates a list of numerical values $a(v) \in$
+$\mathbb{R}^+$ with a variable $v$.
 
 ### Protocol
 
