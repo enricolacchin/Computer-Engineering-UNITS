@@ -1,7 +1,5 @@
 # Final Project Advanced Programming 2023
 
-# Advanced Programming A.Y. 19/20: final project
-
 ## Abstract
 
 Design and develop a server that, based on a text- and message-oriented protocol, takes requests of computation
@@ -16,8 +14,8 @@ or more named variables $V_e \in V$.
 
 **Example**: with $e=\frac{x+1}{y-2^x}$, $V_e=\{x,y\}$.
 
-Let $a: V \to \mathbb{R}^*$ be a *variable-values function* that associates a list of numerical values $a(v) \in
-\mathbb{R}^*$ with a variable $v$.
+Let $a: V \to \numberset{R}^+$ be a *variable-values function* that associates a list of numerical values $a(v) \in
+\numberset{R}^+$ with a variable $v$.
 
 ### Protocol
 
@@ -192,9 +190,9 @@ First, a list $I$ of tuples $(v, x_\text{lower}, x_\text{step}, x_\text{upper})$
 each `VariableValues`.
 If, for any tuple, $x_\text{step} \le 0$, the step fails.
 
-Second, $a: V \to \mathcal{P}(\mathbb{R})$ is built as follows:  
+Second, $a: V \to \mathcal{P}(\numberset{R})$ is built as follows:  
 $a(v) = \begin{cases} \emptyset & \text{if no tuple for } v \text{ exists in } I \\ (x_\text{lower}+k x_\text{step}: x_
-\text{lower}+k x_\text{step} \le x_\text{upper}){}_{k \in \mathbb{N}} & \text{otherwise}\end{cases}$
+\text{lower}+k x_\text{step} \le x_\text{upper}){}_{k \in \numberset{N}} & \text{otherwise}\end{cases}$
 
 **Example**: `x0:-1:0.1:1,x1:-10:1:20` is parsed such that $a($`x0`$)=(-1,-0.9, \dots, 0.9,1)$, $a($`x1`$)=(-10,-9,
 \dots, 19,20)$, and $a(v)=\emptyset$ for any other $v$.
@@ -225,7 +223,7 @@ The student may freely get inspiration from or reuse this code.
 
 ##### Step 4: computation of $o$ from $T$ and $E$
 
-Let $V_t \in V$ be the set of variables for which a tuple $t$ defines the values and let $e(t) \in \mathbb{R}$ be the
+Let $V_t \in V$ be the set of variables for which a tuple $t$ defines the values and let $e(t) \in \numberset{R}$ be the
 value of the expression $e$ for the variables values given by $t$ such that $V_t \supseteq V_e$.
 
 Then:
