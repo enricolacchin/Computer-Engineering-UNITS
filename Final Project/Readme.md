@@ -1,5 +1,7 @@
 # Final Project Advanced Programming 2023
 
+Official project assignment: [here](https://medvet.inginf.units.it/teaching/2223-advancedprogramming/project/)
+
 ## Abstract
 
 Design and develop a server that, based on a text- and message-oriented protocol, takes requests of computation
@@ -194,14 +196,14 @@ Second, $a: V \to \mathcal{P}(\mathbb{R})$ is built as follows:
 $a(v) = \begin{cases} \emptyset & \text{if no tuple for } v \text{ exists in } I \\ (x_\text{lower}+k x_\text{step}: x_
 \text{lower}+k x_\text{step} \le x_\text{upper}){}_{k \in \mathbb{N}} & \text{otherwise}\end{cases}$
 
-**Example**: `x0:-1:0.1:1,x1:-10:1:20` is parsed such that $a($`x0`$)=(-1,-0.9, \dots, 0.9,1)$, $a($`x1`$)=(-10,-9,
-\dots, 19,20)$, and $a(v)=\emptyset$ for any other $v$.
+**Example**: `x0:-1:0.1:1,x1:-10:1:20` is parsed such that $a($`x0`$)=(-1,-0.9, \dots, 0.9,1)$, $a($`x1`$)=(
+-10,-9,\dots, 19,20)$, and $a(v)=\emptyset$ for any other $v$.
 
 ##### Step 2: building of value tuples $T$ from $a$
 
-If `ValuesKind` is `GRID`, than $T$ is the cartesian product of all the non empty lists in the image of $a$.
+If `ValuesKind` is `GRID`, than $T$ is the cartesian product of all the non-empty lists in the image of $a$.
 
-Otherwise, if `ValuesKind` is `LIST`, if the non empty lists in the image of $a$ do not have the same lenght, the step
+Otherwise, if `ValuesKind` is `LIST`, if the non-empty lists in the image of $a$ do not have the same length, the step
 fails.
 Otherwise, $T$ is the element-wise merging of those lists.
 
@@ -228,11 +230,11 @@ value of the expression $e$ for the variables values given by $t$ such that $V_t
 
 Then:
 
-- if `ComputationKind` is `MIN`, $o=\min_{e \in E, t \in T} e(t)$, or the step fails if $\exists e \in E: V_t
-  \not\supseteq V_e$;
-- if `ComputationKind` is `MIN`, $o=\max_{e \in E, t \in T} e(t)$, or the step fails if $\exists e \in E: V_t
-  \not\supseteq V_e$;
-- if `ComputationKind` is `AVG`, $o=\frac{1}{|T|} \sum_{t \in T} e_1(t)$, or the step fails if $V_t \not\supseteq V_
+- if `ComputationKind` is `MIN`, $o=\min_{e \in E, t \in T} e(t)$, or the step fails if $\exists e \in E: V_t \not
+  \supseteq V_e$;
+- if `ComputationKind` is `MIN`, $o=\max_{e \in E, t \in T} e(t)$, or the step fails if $\exists e \in E: V_t \not
+  \supseteq V_e$;
+- if `ComputationKind` is `AVG`, $o=\frac{1}{|T|} \sum_{t \in T} e_1(t)$, or the step fails if $V_t \not \supseteq V_
   {e_1}$;
 - if `ComputationKind` is `COUNT`, $o=|T|$.
 
@@ -268,8 +270,9 @@ The server must:
 Moreover, the server must:
 
 - be a Java application delivered as a `.jar` named after the student last name and first name in upper camel case
-  notation (e.g., `MedvetEric.jar`);
-- be executable with the following syntax `java -jar MedvetEric.jar `$p$ (e.g., `java -jar MedvetEric.jar 10000` for
+  notation (e.g., `LacchinEnrico.jar`);
+- be executable with the following syntax `java -jar LacchinEnrico.jar `$p$ (e.g., `java -jar LacchinEnrico.jar 10000`
+  for
   $p=10000$)
 
 ## Delivery of the project
