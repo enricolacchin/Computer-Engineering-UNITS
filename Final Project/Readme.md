@@ -193,7 +193,7 @@ each `VariableValues`.
 If, for any tuple, $x_\text{step} \le 0$, the step fails.
 
 Second, $a: V \to \mathcal{P}(\mathbb{R})$ is built as follows: if no tuple for $v$ exists in $I$, then $a(v)$
-$=\emptyset$; otherwise, $a(v) = x_{lower} + kx_{step}: x_{lower} + kx_{step} \leq x_{upper})_{k\in\mathbb{N}}$
+$=\emptyset$; otherwise, $a(v) = (x_{lower} + kx_{step}: x_{lower} + kx_{step} \leq x_{upper})_{k\in\mathbb{N}}$
 
 **Example**: `x0:-1:0.1:1,x1:-10:1:20` is parsed such that $a($`x0`$)=(-1,-0.9, \dots, 0.9,1)$, $a($`x1`$)=(
 -10,-9,\dots, 19,20)$, and $a(v)=\emptyset$ for any other $v$.
