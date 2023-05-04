@@ -193,8 +193,8 @@ each `VariableValues`.
 If, for any tuple, $x_\text{step} \le 0$, the step fails.
 
 Second, $a: V \to \mathcal{P}(\mathbb{R})$ is built as follows:  
-$a(v) = \begin{cases} \emptyset & \text{if no tuple for } v \text{ exists in } I \\ (x_\text{lower}+k x_\text{step}: x_
-\text{lower}+k x_\text{step} \le x_\text{upper}){}_{k \in \mathbb{N}} & \text{otherwise}\end{cases}$
+$$a(v) = \begin{cases} \emptyset & \text{if no tuple for } v \text{ exists in } I \\ (x_\text{lower}+k x_\text{step}: x_
+\text{lower}+k x_\text{step} \le x_\text{upper}){}_{k \in \mathbb{N}} & \text{otherwise}\end{cases}$$
 
 **Example**: `x0:-1:0.1:1,x1:-10:1:20` is parsed such that $a($`x0`$)=(-1,-0.9, \dots, 0.9,1)$, $a($`x1`$)=(
 -10,-9,\dots, 19,20)$, and $a(v)=\emptyset$ for any other $v$.
@@ -230,12 +230,12 @@ value of the expression $e$ for the variables values given by $t$ such that $V_t
 
 Then:
 
-- if `ComputationKind` is `MIN`, $o=\min_{e \in E, t \in T} e(t)$, or the step fails if $\exists e \in E: V_t \not
-  \supseteq V_e$;
-- if `ComputationKind` is `MIN`, $o=\max_{e \in E, t \in T} e(t)$, or the step fails if $\exists e \in E: V_t \not
-  \supseteq V_e$;
-- if `ComputationKind` is `AVG`, $o=\frac{1}{|T|} \sum_{t \in T} e_1(t)$, or the step fails if $V_t \not \supseteq V_
-  {e_1}$;
+- if `ComputationKind` is `MIN`, $o=\min_{e \in E, t \in T} e(t)$, or the step fails if $\exists e \in E: V_t$
+  $\not\supseteq V_e$;
+- if `ComputationKind` is `MIN`, $o=\max_{e \in E, t \in T} e(t)$, or the step fails if $\exists e \in E: V_t$
+  $\not\supseteq V_e$;
+- if `ComputationKind` is `AVG`, $o=\frac{1}{|T|} \sum_{t \in T} e_1(t)$, or the step fails if $V_t \not \supseteq$
+  $V_{e_1}$;
 - if `ComputationKind` is `COUNT`, $o=|T|$.
 
 ### Examples of request-response pairs
