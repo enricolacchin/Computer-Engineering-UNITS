@@ -1,0 +1,1 @@
+pandoc "document_it.md" -o "document_it.pdf" --from markdown --template "../src/structure.tex" --listings
