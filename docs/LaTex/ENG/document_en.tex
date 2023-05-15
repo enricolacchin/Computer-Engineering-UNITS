@@ -1,0 +1,271 @@
+%----------------------------------------------
+% PACKAGES
+%----------------------------------------------
+\documentclass[12pt,a4paper]{article}
+\input{../src/structure}
+\input{../src/code}
+
+%----------------------------------------------
+% DOCUMENT START
+%----------------------------------------------
+\begin{document}
+
+%----------------------------------------------
+% TITLE
+%----------------------------------------------
+\pagenumbering{gobble}
+
+\small{Enrico Lacchin}
+
+\MidSep
+\textbf{\LARGE{Final Project}}
+
+\MidSep
+\textit{\Large{079IN - Database}}
+\Sep
+
+\begin{center}
+\includegraphics[width=1\columnwidth]{../../img/db}
+\end{center}
+
+\vfill
+Course: 079IN - Database
+
+Teacher: De Lorenzo Andrea
+
+Delivery Date: 30th May 2023
+
+%----------------------------------------------
+% INDEX
+%----------------------------------------------
+
+\clearpage
+\pagenumbering{roman}
+\setcounter{page}{1}
+\tableofcontents
+
+%----------------------------------------------
+% CHAPTER START
+%----------------------------------------------
+% NEW CHAPTER
+\clearpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\section{Project Presentation}\label{sec:project-presentation}
+A database is to be created for COMPANY LTD, a company that operates in the world of event organisation, online communication (websites, social media, advertising, etc.) and carries out some operations in the world of aviation.
+The company needs a relational database to manage all the operations and projects they carry out on a daily basis.
+The company often relies on external suppliers and collaborators and these will have to be represented with tables.
+
+\subsection{Database Requirements}\label{subsec:database-requirements}
+\begin{itemize}
+  \item For each employee there must be a relationship with his superior, his department of competence and it must be indicated whether he is a member of the board of directors.
+  \item Each project must be assigned a customer, an invoice (initially there may not be one), a competence department and the necessary suppliers for that project.
+  \item There must be a reference department for each customer.
+  \item Each department must have an office reference and a manager.
+  \item Each supplier/collaborator must have a department of competence.
+  \item Each customer and invoice must have a status in a specific list.
+  \item Each employee must refer to at least one department.
+\end{itemize}
+
+\subsection{Database Actions}\label{subsec:database-actions}
+COMPANY LTD shall perform the following actions on the database:
+\begin{itemize}
+  \item Once a year, the view of all members on the board of directors is requested in order to convene the board meeting
+  \item Once a day, the projects and invoices are updated and, if necessary, customers, suppliers and collaborators are added.
+  \item Once a year, all invoices issued during the year and the total turnover are displayed in order to be able to draw up the balance sheet.
+  \item Depending on the company's development, there must be the possibility of adding departments and/or offices
+  \item Twice a year COMPANY LTD wants to know to which customers $N$ or more invoices have been issued (since 1 January of the current year).
+  \item The company needs to see the invoices issued between two specific dates in order to monitor progress.
+\end{itemize}
+
+% NEW CHAPTER
+\section{Entity - Relationship Schema}\label{sec:entity---relationship-schema}
+\begin{center}
+\includegraphics[width=0.9\columnwidth]{../../img/er_scheme}
+\end{center}
+
+
+% NEW CHAPTER
+\section{Data Dictionary}\label{sec:data-dictionary}
+\subsection{Entity}\label{subsec:entity}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Entità}} & \multicolumn{1}{c|}{\textbf{Descrizione}} & \multicolumn{1}{c|}{\textbf{Attributi}} &  \multicolumn{1}{c|}{\textbf{Identificatore}}\\ \hline \hline
+\textit{Customers} & Company clients & ID, name, status, agreement deadline, address, contacts, agent & ID \\
+\textit{Employees} & Company employees & ID, name, role, phone, mail, flag if he/she is in the BoD & ID \\
+\textit{Projects} & List of projects carried out by the company & Name, date & Name \\
+\textit{Invoices} & List of issued invoices & ID, status, issue date, amount & ID \\
+\textit{Departments} & List of company departments & Name, manager, office & Name \\
+\textit{Suppliers} & List of company suppliers & ID, name, address, contacts, VAT number & ID \\
+\textit{Collaborators} & People / Companies cooperating with COMPANY LTD & ID, name, job, contacts, VAT number & ID\\
+\textit{Offices} & List of company offices & Office code, address, contacts & Office code \\ \hline
+\end{tabular}%
+}
+
+\subsection{Relationship}\label{subsec:relationship}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Relazione}} & \multicolumn{1}{c|}{\textbf{Descrizione}} & \multicolumn{1}{c|}{\textbf{Componenti}} \\ \hline \hline
+\textit{Agent} & Employee responsible for customer & Customers, employees \\
+\textit{Report} & Contact person for the employee & Employees \\
+\textit{Manager} & Department Manager & Employees, departments \\
+\textit{Client} & Project-related customer & Projects, customers \\
+\textit{Client} & Customer relating to an invoice & Invoices, customers \\
+\textit{Invoice} & Project invoice & Invoices, projects \\
+\textit{Require} & Whether or not suppliers are needed for a project & Suppliers, projects \\
+\textit{Competence} & Department of competence for a project & Projects, departments \\
+\textit{Location} & Department Headquarter & Offices, departments \\
+\textit{Afference} & Department of reference for the collaborator & Departments, collaborators \\
+\textit{Afference} & Department of reference for the supplier & Departments, suppliers \\
+\textit{Afference} & Department of reference for the employee & Departments, employees \\
+\textit{Afference} & Department of reference for the customer & Departments, customers\\ \hline
+\end{tabular}%
+}
+
+% NEW CHAPTER
+\section{Non-expressible constraints}\label{sec:non-expressible-costraints}
+Analysis of the Database requirements reveals the following non-expressible constraints:\begin{itemize}
+  \item Invoice status must be within a list, which we will later define as: Draft, Not Paid and Paid.
+  \item Customer status must be included in a list, which we will later define as: Ongoing Negotiation, Agreed, In Progress and Done.
+  \item The column where we determine whether the employee is in the BOD or not (column *BOD*) can only have the value TRUE (T) or FALSE (F)
+\end{itemize}
+
+% NEW CHAPTER
+\section{Volume table}\label{sec:volume-table}
+Assume that COMPANY LTD is an SMB with:
+\begin{itemize}
+\item 100 employees
+\item 10 departments
+\item 10 offices
+\item 500 customers
+\item 100 suppliers
+\item 20 collaborators
+\item 1000 invoices issued per year for 1000 projects
+\item 4 suppliers per 10 projects (400 suppliers per 1000 projects)
+\end{itemize}
+The volume table then follows:
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Concept}} & \multicolumn{1}{c|}{\textbf{Type}} & \multicolumn{1}{c|}{\textbf{Volume}} \\ \hline \hline
+\textit{Employee} & E & 100 \\
+\textit{Office} & E & 10 \\
+\textit{Department} & E & 10 \\
+\textit{Customer} & E & 500 \\
+\textit{Collaborator} & E & 20 \\
+\textit{Supplier} & E & 100 \\
+\textit{Invoice} & E & 1000 \\
+\textit{Project} & E & 1000 \\
+\textit{Require} & R & 400\\ \hline
+\end{tabular}\end{center}
+I have omitted many relationships in the volume table, as they are easily calculated from the volumes of the entities.
+
+% NEW CHAPTER
+\section{Redundancy analysis}\label{sec:redundancy-analysis}
+In order to improve the Entity - Relationship scheme, I went and analysed all the cycles present to see if any redundant relationships could be eliminated.\\
+\\
+\textbf{Cycles analysed}:\\
+\\
+\textbf{\textit{Customers - Projects - Invoices}}:
+\begin{center}
+\includegraphics[width=0.6\columnwidth]{../../img/er_cycle_custumers-projects-invoices}
+\end{center}
+In particular, I am going to analyse the redundancy of the "Client" relation identified by the colour \textcolor{red}{red}.
+I note that the "Client" relationship between the entities "projects" and "customers" is compulsory (cardinality $(1,1)$), so that if you want to see the client of a given invoice, you could easily find it by looking at the related project.\\
+\\
+In conclusion, that relationship can be eliminated and in the table "invoices" there will be no entry "client" but only the project related to that invoice.\\
+\\
+\\
+\textbf{\textit{Customers - Employees - Departments}}:
+\begin{center}
+\includegraphics[width=0.6\columnwidth]{../../img/er_cycle_customers-employees-departments}
+\end{center}
+In this case I am going to analyse the redundancy "Afference" always identified in \textcolor{red}{red}.
+From the ER diagram it can be seen that each employee must be assigned a department and each customer must be assigned an agent. From this analysis one could say "\textit{I can derive the customer's department from the agent's department}".\\
+\\
+If, however, we go to see the cardinality between employees $\rightarrow$ Afference $\rightarrow$ departments we notice that it is equal to $(1,N)$ i.e. an employee can refer to $1$ or $N$ departments so, in certain cases, I could not identify a specific department.\\
+\\
+In conclusion, the "Afference" relation between "customers" and "departments" is not duplicated but rather necessary, also considering the fact that otherwise one of the requirements of the database would be violated.\\
+\\
+\\
+\textbf{\textit{Projects - Departments - Suppliers}}:
+\begin{center}
+\includegraphics[width=0.6\columnwidth]{../../img/er_cycle_projects-departments-suppliers}
+\end{center}
+In this cycle, no redundancy results since each project and each supplier must be assigned a department, but suppliers are not necessarily required in each project (given the cardinality $(0,N)$).\\
+\\
+It follows that the relationship projects $\rightarrow$ Require $\rightarrow$ suppliers is also not redundant given its nature as a "many-to-many" relationship.\\
+\\
+\\
+\textbf{\textit{Customers - Departments - Projects}}:
+\begin{center}
+\includegraphics[width=0.6\columnwidth]{../../img/er_cycle_customers-departments-projects}
+\end{center}
+In this cycle, I want to analyse whether I can remove the 'Afference' relationship between 'customers' and 'departments' highlighted in \textcolor{red}{red}.\\
+\\
+I immediately notice that each project must be assigned to a customer and a department. I could think "\textit{I get the customer's department from one of the projects with the same customer}", but this statement does not hold up because a customer can submit several projects under the responsibility of different departments.\\
+\\
+I could however, given the cardinality of customers $\rightarrow$ Afference $\rightarrow$ departments equal to $(1,1)$, add as a department the one with the most projects. In this case, however, I would be violating what is a requirement of the database in that for each customer the reference department must be displayed.\\
+\\
+Also in this case the relationship customers $\rightarrow$ departments is required.
+
+% NEW CHAPTER
+\clearpage
+\section{Entity - Relationship Schema Revised}\label{sec:entity-relationship-schema-revised}
+After analysing all the sub-cycles, I go on to remove only the relationship customers $\rightarrow$ Client $\rightarrow$ invoices.\\
+\\
+The revised schema follows:
+\begin{center}
+\includegraphics[width=0.9\columnwidth]{../../img/er_scheme_reviewed}
+\end{center}
+
+% NEW CHAPTER 
+\section{Logic Schema}\label{sec:logic-schema}
+\begin{center}
+\includegraphics[width=0.9\columnwidth]{../../img/logic_scheme}
+\end{center}
+In the logic schema I wanted to highlight the tables *suppliersRequire* and *employeeAfference* that I had to implement in order to realise the two many-to-many relationships in the Entity - Relationship schema.
+
+
+% NEW CHAPTER
+\clearpage
+\section{Physical Design}\label{sec:physical-design}
+In order not to make this file too heavy, I wanted to create SQL scripts for creating tables, views and store procedures respectively, which can be downloaded from the \href{https://github.com/enricolacchin/database-2023-final-project/}{\textbf{repo github}} of the project or from the links below.
+\begin{itemize}
+\item File table\_creation.sql: \href{https://github.com/enricolacchin/database-2023-final-project/SQL/table_creation.sql}{\textbf{download}}
+\item File view\_sp\_creation.sql: \href{https://github.com/enricolacchin/database-2023-final-project/SQL/view_sp_creation.sql}{\textbf{download}}
+\item File data\_insert.sql: \href{https://github.com/enricolacchin/database-2023-final-project/SQL/data_insert.sql}{\textbf{download}}
+\end{itemize}
+In the physical design, I want to focus on the control used for the non-expressible constraints mentioned above:
+\flushleft
+\begin{lstlisting}[language = SQL,label={lst:check}]
+CREATE TABLE customers(
+  /* ... */
+  status char(30) CHECK(status IN ('Ongoing Negotiation', 'Agreed', 'In Progress', 'Done')),
+  /* ... */
+);
+\end{lstlisting}
+Using the keyword \textbf{CHECK} I went to check that that particular column was only part of a defined list.
+
+\Sep \noindent
+As far as Stored Procedures are concerned, the most interesting one is the one that returns to me the invoices between two chosen dates.
+Two dates are given as input and with the keyword \textbf{BETWEEN} I go to extrapolate only the required invoices. The \textbf{JOIN} keyword is used to represent the data in a nicer way so that I can also see the customer's name.
+\begin{lstlisting}[language = SQL,label={lst:invoices-dates}]
+CREATE PROCEDURE invoicesBetweenDates(IN startDate DATE, IN endDate DATE)
+BEGIN
+  SELECT customerID, customers.name, invoiceID, issuedDate FROM invoices
+  INNER JOIN projects ON projects.invoice = invoices.invoiceID
+  INNER JOIN customers ON customers.customerID = projects.client
+  WHERE issuedDate BETWEEN startDate AND endDate;
+END;
+\end{lstlisting}
+
+%----------------------------------------------
+% END OF DOCUMENT
+%----------------------------------------------
+\end{document}
