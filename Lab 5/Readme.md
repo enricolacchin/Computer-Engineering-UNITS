@@ -5,7 +5,7 @@
 Is required to model the concept of a control system.
 A control system is a set of components that manage the behaviour of other systems using feedback.
 
-![](img/controlsystem.jpeg | width=50)
+![](img/controlsystem.jpeg)
 
 ## Structure
 
