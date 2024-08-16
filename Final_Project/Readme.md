@@ -158,7 +158,7 @@ where `[^;]*` does not include new line characters.
 If the request $r$ is a *quit request*, the server $S$ must immediately close the connection with the client $C$.
 
 Otherwise, $S$ must reply with a response $s$.
-If $s$ is an error response, the part of $s$ following `ERR;` must be a human-comprehensible, succint textual
+If $s$ is an error response, the part of $s$ following `ERR;` must be a human-comprehensible, succinct textual
 description of the error.
 Otherwise, if $s$ is an ok response, the first of two numbers following `OK;` must be the *response time*, i.e., the
 number of seconds $S$ took to process $r$, with at least 3 digits after the decimal separator (millisecond precision).
@@ -271,8 +271,7 @@ Moreover, the server must:
 - be a Java application delivered as a `.jar` named after the student last name and first name in upper camel case
   notation (e.g., `LacchinEnrico.jar`);
 - be executable with the following syntax `java -jar LacchinEnrico.jar `$p$ (e.g., `java -jar LacchinEnrico.jar 10000`
-  for
-  $p=10000$)
+  for $p=10000$)
 
 ## Delivery of the project
 
