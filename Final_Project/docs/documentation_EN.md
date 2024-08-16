@@ -48,7 +48,6 @@ The project is organized into packages, each with a specific responsibility:
 - **Utils**: Contains general utilities such as logging and annotations.
     - `LogExecutionTime`: Annotation for logging method execution time.
     - `LoggingUtils`: Provides methods for logging server operations.
-    - `MethodLogger`: Interface or utility class for method-level logging.
     - `Response`: Models the responses sent by the server to the clients, both success and error responses.
     - `Statistics`: Collects and provides statistics on the requests processed by the server.
 
