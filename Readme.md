@@ -4,4 +4,4 @@ This is the repository of the course "143IN - Advanced Programming" a.y. 2022/20
 Trieste.
 
 In this [repo](.) you can find all the exercises carried out during the year and in addition you can find
-my [final project](./Final%20Project)
+my [final project](./Final_Project)
