@@ -24,7 +24,7 @@ espressioni definite dall'utente.
 
 Il progetto è organizzato in pacchetti, ciascuno con una specifica responsabilità:
 
-- **Math**: Contiene le classi che eseguono i calcoli matematici.
+- **math**: Contiene le classi che eseguono i calcoli matematici.
     - `AvgComputation`: Calcola la media delle espressioni fornite.
     - `Computation`: Classe base astratta per le operazioni di calcolo.
     - `ComputationEngine`: Gestisce l'esecuzione dei calcoli e invoca le classi appropriate per il tipo di operazione
@@ -34,18 +34,18 @@ Il progetto è organizzato in pacchetti, ciascuno con una specifica responsabili
     - `MaxComputation`: Calcola il valore massimo tra i risultati delle espressioni.
     - `MinComputation`: Calcola il valore minimo tra i risultati delle espressioni.
 
-- **Request**: Gestisce il parsing e l'elaborazione delle richieste.
-    - `Request`: Rappresenta una richiesta generica inviata al server.
+- **request**: Gestisce il parsing e l'elaborazione delle richieste.
+    - `request`: Rappresenta una richiesta generica inviata al server.
     - `RequestHandler`: Gestisce le richieste ricevute e invia le risposte appropriate.
-    - `RequestParser`: Converte le stringhe delle richieste in oggetti `Request`.
+    - `RequestParser`: Converte le stringhe delle richieste in oggetti `request`.
     - `RequestType`: Enum che definisce i vari tipi di richieste supportate dal server.
 
-- **Server**: Contiene la logica del server e la gestione delle connessioni.
+- **server**: Contiene la logica del server e la gestione delle connessioni.
     - `ClientHandler`: Gestisce la connessione e la comunicazione con un singolo client.
-    - `Server`: Classe principale che avvia il server, gestisce le connessioni e distribuisce le richieste
+    - `server`: Classe principale che avvia il server, gestisce le connessioni e distribuisce le richieste
       ai `ClientHandler`.
 
-- **Utils**: Contiene utility generali come logging e annotazioni.
+- **utils**: Contiene utility generali come logging e annotazioni.
     - `LogExecutionTime`: Annotazione per il logging del tempo di esecuzione dei metodi.
     - `LoggingUtils`: Fornisce metodi per il logging delle operazioni del server.
     - `Response`: Modella le risposte che il server invia ai client, sia di successo che di errore.
@@ -71,7 +71,7 @@ Il progetto è organizzato in pacchetti, ciascuno con una specifica responsabili
 
 ### Configurazione
 
-- **Avvio del Server**:
+- **Avvio del server**:
   Esegui il server utilizzando il comando seguente:
   ```bash
   java -jar build/libs/Final_Project.jar [PORT]
@@ -80,7 +80,7 @@ Il progetto è organizzato in pacchetti, ciascuno con una specifica responsabili
 
 ## Utilizzo
 
-### Avvio del Server
+### Avvio del server
 
 Esegui il server con:
 
@@ -124,7 +124,7 @@ Il logging è gestito tramite la classe `LoggingUtils`. I messaggi vengono stamp
 ### Debug
 
 - Usa gli strumenti di debug integrati in IntelliJ IDEA per eseguire il progetto passo-passo.
-- Aggiungi punti d'interruzione nelle classi principali come `Server` e `ComputationEngine` per tracciare il flusso di
+- Aggiungi punti d'interruzione nelle classi principali come `server` e `ComputationEngine` per tracciare il flusso di
   esecuzione.
 
 ## Manutenzione ed Estendibilità

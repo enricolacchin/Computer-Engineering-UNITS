@@ -24,7 +24,7 @@ on user-defined expressions.
 
 The project is organized into packages, each with a specific responsibility:
 
-- **Math**: Contains the classes that perform mathematical computations.
+- **math**: Contains the classes that perform mathematical computations.
     - `AvgComputation`: Calculates the average of the provided expressions.
     - `Computation`: Abstract base class for computation operations.
     - `ComputationEngine`: Manages the execution of computations and invokes the appropriate classes for the requested
@@ -34,18 +34,18 @@ The project is organized into packages, each with a specific responsibility:
     - `MaxComputation`: Calculates the maximum value among the results of the expressions.
     - `MinComputation`: Calculates the minimum value among the results of the expressions.
 
-- **Request**: Handles the parsing and processing of requests.
-    - `Request`: Represents a generic request sent to the server.
+- **request**: Handles the parsing and processing of requests.
+    - `request`: Represents a generic request sent to the server.
     - `RequestHandler`: Manages the received requests and sends appropriate responses.
-    - `RequestParser`: Converts request strings into `Request` objects.
+    - `RequestParser`: Converts request strings into `request` objects.
     - `RequestType`: Enum that defines the various types of requests supported by the server.
 
-- **Server**: Contains the server logic and connection management.
+- **server**: Contains the server logic and connection management.
     - `ClientHandler`: Manages the connection and communication with a single client.
-    - `Server`: Main class that starts the server, manages connections, and distributes requests to `ClientHandler`
+    - `server`: Main class that starts the server, manages connections, and distributes requests to `ClientHandler`
       instances.
 
-- **Utils**: Contains general utilities such as logging and annotations.
+- **utils**: Contains general utilities such as logging and annotations.
     - `LogExecutionTime`: Annotation for logging method execution time.
     - `LoggingUtils`: Provides methods for logging server operations.
     - `Response`: Models the responses sent by the server to the clients, both success and error responses.
@@ -71,7 +71,7 @@ The project is organized into packages, each with a specific responsibility:
 
 ### Configuration
 
-- **Starting the Server**:
+- **Starting the server**:
   Run the server using the following command:
   ```bash
   java -jar build/libs/Final_Project.jar [PORT]
@@ -80,7 +80,7 @@ The project is organized into packages, each with a specific responsibility:
 
 ## Usage
 
-### Starting the Server
+### Starting the server
 
 Run the server with:
 
@@ -88,9 +88,9 @@ Run the server with:
 java -jar build/libs/Final_Project.jar 10000
 ```
 
-### Request and Response Examples
+### request and Response Examples
 
-- **Computation Request**:
+- **Computation request**:
   ```plaintext
   MAX_GRID;x0:-1:0.1:1,x1:-10:1:20;((x0+(2.0^x1))/(21.1-x0));(x1*x0)
   ```
@@ -100,7 +100,7 @@ java -jar build/libs/Final_Project.jar 10000
   OK;0.040;52168.009950
   ```
 
-- **Statistics Request**:
+- **Statistics request**:
   ```plaintext
   STAT_REQS
   ```
@@ -110,7 +110,7 @@ java -jar build/libs/Final_Project.jar 10000
   OK;0.000;42.000
   ```
 
-- **Quit Request**:
+- **Quit request**:
   ```plaintext
   BYE
   ```
@@ -124,7 +124,7 @@ Logging is managed through the `LoggingUtils` class. Messages are printed to the
 ### Debugging
 
 - Use the built-in debugging tools in IntelliJ IDEA to step through the project.
-- Set breakpoints in key classes like `Server` and `ComputationEngine` to trace the execution flow.
+- Set breakpoints in key classes like `server` and `ComputationEngine` to trace the execution flow.
 
 ## Maintenance and Extensibility
 
