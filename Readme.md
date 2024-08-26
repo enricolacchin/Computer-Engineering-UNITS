@@ -8,6 +8,11 @@ my [final project](./Final_Project)
 
 Teacher: [Eric Medvet](https://github.com/ericmedvet)
 
+### Useful Links
+
+- [Course Slides](https://github.com/ericmedvet/slides/blob/master/advanced-programming-2324/)
+- [Object & Reference Diagram Generator Tool](https://github.com/enricolacchin/object-diagram-visualizer)
+
 # :it: Programmazione Avanzata 2023
 
 Questo è il repository del corso "143IN - Programmazione Avanzata" per l'anno accademico 2022/2023 frequentato presso l'
@@ -17,3 +22,8 @@ In questo [repository](.) puoi trovare tutti gli esercizi svolti durante l'anno 
 mio [progetto finale](./Final_Project).
 
 Docente: [Eric Medvet](https://github.com/ericmedvet)
+
+### Collegamenti utili
+
+- [Slide del corso](https://github.com/ericmedvet/slides/blob/master/advanced-programming-2324/)
+- [Tool per generare diagrammi a Oggetti e Riferimenti](https://github.com/enricolacchin/object-diagram-visualizer)
