@@ -1,0 +1,60 @@
+\usepackage[a4paper]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{lipsum}
+\usepackage{hyperref}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{geometry}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage[normalem]{ulem}
+
+%----------------------------------------------
+% NUOVI COMANDI
+%----------------------------------------------
+\newcommand{\Sep}{\vspace{1.5em}}
+\newcommand{\MidSep}{\vspace{1em}}
+\newcommand{\SmallSep}{\vspace{0.5em}}
+
+\newcommand{\numberset}{\mathbb}
+\newcommand{\N}{\numberset{N}} 
+\newcommand{\Z}{\numberset{Z}}
+\newcommand{\Q}{\numberset{Q}}
+\newcommand{\R}{\numberset{R}}
+\newcommand{\C}{\numberset{C}}
+
+\definecolor{ao}{rgb}{0.0, 0.5, 0.0}
+\definecolor{bluel}{HTML}{007aff}
+\definecolor{or}{HTML}{F59A23}
+\definecolor{gg}{HTML}{007355}
+\definecolor{gg2}{HTML}{7EC636}
+\definecolor{yell}{HTML}{ffd300}
+\definecolor{pp}{HTML}{82218B}
+\definecolor{rose}{HTML}{FF9797}
+\definecolor{rose2}{HTML}{F65353}
+
+%----------------------------------------------
+% INTESTAZIONE  E PIE DI PAGINA
+%----------------------------------------------
+\pagestyle{myheadings}
+\pagestyle{fancy}
+\fancyhf{}
+\hypersetup{hidelinks}
+
+\headsep= 20mm
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{2pt}
+
+\lhead{\includegraphics[width=0.4\columnwidth]{img/units_logo.png}}
+\rhead{\includegraphics[width=0.3\columnwidth]{img/logo_black.png}}\lfoot{Copyright © Enrico Lacchin | \url{www.enricolacchin.com}}
+\cfoot{}
+\rfoot{\thepage}
+
+\leftskip 0.0pt

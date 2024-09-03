@@ -1,0 +1,59 @@
+\usepackage[a4paper]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{lipsum}
+\usepackage{hyperref}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{geometry}
+%\usepackage{xcolor}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{listings} 
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{calc}
+\usepackage{longtable}
+
+
+%----------------------------------------------
+% NUOVI COMANDI
+%----------------------------------------------
+\newcommand{\Sep}{\vspace{1.5em}}
+\newcommand{\MidSep}{\vspace{1em}}
+\newcommand{\SmallSep}{\vspace{0.5em}}
+
+\newcommand{\numberset}{\mathbb}
+\newcommand{\N}{\numberset{N}} 
+\newcommand{\Z}{\numberset{Z}}
+\newcommand{\Q}{\numberset{Q}}
+\newcommand{\R}{\numberset{R}}
+\newcommand{\C}{\numberset{C}}
+
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+\def\scalecheck{\resizebox{\widthof{\checkmark}*\ratio{\widthof{x}}{\widthof{\normalsize x}}}{!}{\checkmark}}
+
+%----------------------------------------------
+% INTESTAZIONE  E PIE DI PAGINA
+%----------------------------------------------
+\pagestyle{myheadings}
+\pagestyle{fancy}
+\fancyhf{}
+\hypersetup{hidelinks}
+
+\headsep= 20mm
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{2pt}
+
+\lhead{\includegraphics[width=0.4\columnwidth]{img/units_logo.png}}
+\rhead{\includegraphics[width=0.3\columnwidth]{img/logo_black.png}}\lfoot{© Enrico Lacchin | \url{www.enricolacchin.com}}
+\cfoot{}
+\rfoot{\thepage}
+
+\leftskip 0.0pt
