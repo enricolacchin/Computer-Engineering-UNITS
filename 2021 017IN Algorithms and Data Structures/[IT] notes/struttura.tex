@@ -1,0 +1,48 @@
+\usepackage[a4paper]
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{lipsum}
+\usepackage{hyperref}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{booktabs}
+
+%----------------------------------------------
+% NUOVI COMANDI
+%----------------------------------------------
+\newcommand{\Sep}{\vspace{1.5em}}
+\newcommand{\MidSep}{\vspace{1em}}
+\newcommand{\SmallSep}{\vspace{0.5em}}
+
+\newcommand{\numberset}{\mathbb}
+\newcommand{\N}{\numberset{N}} 
+\newcommand{\Z}{\numberset{Z}}
+\newcommand{\Q}{\numberset{Q}}
+\newcommand{\R}{\numberset{R}}
+\newcommand{\C}{\numberset{C}}
+%----------------------------------------------
+% INTESTAZIONE  E PIE DI PAGINA
+%----------------------------------------------
+\pagestyle{myheadings}
+\pagestyle{fancy}
+\fancyhf{}
+\hypersetup{hidelinks}
+
+\headsep= 20mm
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{2pt}
+
+\lhead{\includegraphics[width=0.4\columnwidth]{img/units_logo}}
+\rhead{\includegraphics[width=0.3\columnwidth]{img/logo_black}}\lfoot{© Enrico Lacchin | \url{www.enricolacchin.com}}
+\cfoot{}
+\rfoot{\thepage}
+
+\leftskip 0.0pt
