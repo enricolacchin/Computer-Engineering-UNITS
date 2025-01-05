@@ -1,0 +1,3 @@
+Copiare tutto in Google Drive e renderlo pubblico.
+
+Si può fare il download dell'intero folder (cancellare IDEA)

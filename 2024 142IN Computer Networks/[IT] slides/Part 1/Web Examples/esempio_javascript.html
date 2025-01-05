@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Un mito</title>
+    </head>
+<body>
+
+<h1>Clicca l'immagine (modifica contenuto testuale)</h1>
+<img src="Figure/kaka.jpg" onclick='document.getElementById("grande").textContent = "Ricky Kakà è un MITO!"'>
+<p id="grande">Ricky Kakà è un grande</p>
+
+<h1>Clicca l'immagine (modifica attributo)</h1>
+<p id="grande-marco">Marco Van Basten anche</p>
+<img src="Figure/van-basten.jpg" width="300px" onclick='document.getElementById("grande-marco").style.color = "red"'>
+
+<h1>Clicca l'immagine (aggiunge e rimuove elementi)</h1>
+<p id="grande-marco">Non dimentichiamoli...</p>
+<img id="clickableImage" src="Figure/Flag_of_the_Netherlands.png">
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Get the existing image element by its ID
+      const existingImage = document.getElementById("clickableImage");
+
+      // Add a click event listener to the existing image
+      existingImage.addEventListener("click", function() {
+        // Create a new image element
+        const newImg = document.createElement("img");
+
+        // Set the new image source (URL of the image)
+        newImg.src = "Figure/olandesi.jpg"
+        newImg.width = "440"
+
+        // Append the new image to the same container as the existing image
+        // or any other suitable element where you want to add the new image
+        existingImage.parentElement.appendChild(newImg);
+
+        // do it again
+        const newImg1 = document.createElement("img");
+        newImg1.src = "Figure/sheva.jpg"
+        existingImage.parentElement.appendChild(newImg1);
+
+        // remove Dutch flag
+        document.getElementById("clickableImage").remove()
+      });
+    });
+  </script>
+
+</body>
+</html>

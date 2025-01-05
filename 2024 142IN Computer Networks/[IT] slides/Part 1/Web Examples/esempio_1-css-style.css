@@ -1,0 +1,5 @@
+        h1,h2 {color: blue; font-family: verdana;}
+        table, th, td { border: 1px solid black}
+        .importante {color:  red}
+        .nonimportante {color:  green}
+        #indice {color:  purple}
