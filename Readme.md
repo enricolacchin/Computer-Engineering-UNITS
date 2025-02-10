@@ -26,6 +26,7 @@ Here is a list of the courses included in this repository, organized by the year
 - [2023 080IN Operating Systems](./2023%20080IN%20Operating%20Systems)
 - [2023 143IN Advanced Programming](./2023%20143IN%20Advanced%20Programming)
 - [2024 142IN Computer Networks](./2024%20142IN%20Computer%20Networks)
+- [2025 031IN Signals and Systems](./2025%20031IN%20Signals%20and%20Systems)
 
 Click on any course to navigate directly to its folder and explore the materials available.
 
@@ -74,6 +75,7 @@ Ecco l'elenco dei corsi inclusi in questa repository, organizzati in base all'an
 - [2023 080IN Sistemi Operativi](./2023%20080IN%20Operating%20Systems)
 - [2023 143IN Programmazione Avanzata](./2023%20143IN%20Advanced%20Programming)
 - [2024 142IN Reti di Calcolatori](./2024%20142IN%20Computer%20Networks)
+- [2025 031IN Teoria dei Segnali](./2025%20031IN%20Signals%20and%20Systems)
 
 Clicca su qualsiasi corso per navigare direttamente nella sua cartella ed esplorare i materiali disponibili.
 
